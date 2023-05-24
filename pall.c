@@ -1,9 +1,13 @@
 #include "monty.h"
-#include <stdio.h>
-
-void pall(stack_t **stack)
+/**
+ * f_pall - prints the stack
+ * @head: stack head
+ * @counter: no used
+ * Return: no return
+*/
+void f_pall(stack_t **head, __attribute__((unused)) unsigned int number)
 {
-    stack_t *current = *stack;
+    stack_t *current = *head;
 
     while (current != NULL)
     {
