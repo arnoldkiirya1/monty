@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * f_push - add node to the stack
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
 void f_push(stack_t **head, unsigned int number)
 {
     stack_t *new_node = malloc(sizeof(stack_t));
