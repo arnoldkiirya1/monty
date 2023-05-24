@@ -1,8 +1,6 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-void push(stack_t **stack, int value)
+void f_push(stack_t **head, unsigned int number)
 {
     stack_t *new_node = malloc(sizeof(stack_t));
     if (new_node == NULL)
@@ -11,14 +9,12 @@ void push(stack_t **stack, int value)
         exit(EXIT_FAILURE);
     }
 
-    new_node->n = value;
+    new_node->n = number;
     new_node->prev = NULL;
+    new_node->next = *head;
 
-    if (*stack != NULL)
-    {
-        new_node->next = *stack;
-        (*stack)->prev = new_node;
-    }
+    if (*head != NULL)
+        (*head)->prev = new_node;
 
-    *stack = new_node;
+    *head = new_node;
 }
